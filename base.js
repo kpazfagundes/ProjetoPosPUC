@@ -548,3 +548,4 @@ var verbs = [
         'past' : 'wrote',
         'participle' : 'written'
     }
+]
