@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h3 class="text-center">Irregular Verbs</h3>
+        <hr>
+        <table id="verbs" class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Infinitive</th>
+            <th scope="col">Past</th>
+            <th scope="col">Participle</th>
+            </tr>
+        </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+        </table>
+        <hr>
+        <button class="btn btn-success btn-lg btn-block" >Check</button>
+        <button class="btn btn-danger btn-lg btn-block">Reset</button>
+    </div>
+</body>
+<script src="base.js"></script>
+<script>
+    update();
+    function update(){
+        var arrayVerbs = [];
+
+        var tbody = document.querySelector("#verbs tbody");
+        tbody.innerHTML = "";
+
+        for (var i = 0; i<3; i++){
+            arrayVerbs.push(verbs[Math.floor(Math.random() * verbs.length)]);
+        }
+
+        for (var index in arrayVerbs){
+            tbody.innerHTML += `<tr>
+                                 <td> ${index}</td> 
+                                 <td> ${arrayVerbs[index].infinitive}</td> 
+                                 <td> ${arrayVerbs[index].past}</td>
+                                 <td> ${arrayVerbs[index].participle}</td>
+                                </tr>`;
+        }
+    }
+</script>
+</html>
